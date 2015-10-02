@@ -11,14 +11,14 @@ _The user will be able to organize an event by adding teams to a list and then a
 ## Setup
 
 * _clone repository_
-* _In the Terminal, type cd team_tracker
+* _enter directory via Terminal_
 * _type ruby app.rb_
 * _open browser and type localhost:4567 in the URL_
 * _Enjoy!_
 
 ## Technologies Used
 
-_Ruby, Sinatra, Html_
+_Ruby, Sinatra, RSpec, Capybara, HTML_
 
 ### Legal
 
