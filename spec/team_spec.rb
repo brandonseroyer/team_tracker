@@ -7,6 +7,15 @@ describe('#all') do
   end
 end
 
+describe('.clear') do
+  it('clears the team array of entries') do
+    test_team = Team.new({:name => 'Breaking Bad', :member => 'Walter White'})
+    test_team.save()
+    Team.clear()
+    expect(Team.all()).to(eq([]))
+  end
+end
+
 describe('#team') do
   it('returns a team name') do
     test_team = Team.new({:name => "Breaking Bad"})
@@ -16,8 +25,8 @@ end
 
 describe('#add_member') do
   it('adds a member to a team') do
-    new_team = Team.new({:name => 'Breaking Bad', :definition => 'Walter White'})
-    new_team.save()
-    expect(new_team.add_member('Walter White')).to(eq(['Walter White']))
+    test_team = Team.new({:name => 'Breaking Bad', :member => 'Walter White'})
+    test_team.save()
+    expect(test_team.add_member('Walter White')).to(eq(['Walter White']))
   end
 end
