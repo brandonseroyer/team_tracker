@@ -16,7 +16,7 @@ describe('#clear') do
   end
 end
 
-describe('#team') do
+describe('#find') do
   it('finds a team based on its id') do
     test_team = Team.new({:name => 'Breaking Bad', :member => 'Walter White'})
     test_team.save()
@@ -26,8 +26,17 @@ end
 
 describe('#team') do
   it('returns a team name') do
-    test_team = Team.new({:name => "Breaking Bad"})
-    expect(test_team.name()).to(eq("Breaking Bad"))
+    test_team = Team.new({:name => 'Breaking Bad'})
+    expect(test_team.name()).to(eq('Breaking Bad'))
+  end
+end
+
+describe('#save') do
+  it('saves a team to the team array') do
+    Team.clear()
+    test_team = Team.new({:name => 'Breaking Bad', :member => 'Walter White'})
+    test_team.save()
+    expect(team.all()).to(eq([test_team]))
   end
 end
 
