@@ -1,0 +1,16 @@
+<ul>
+  <h1><strong><%= @team.name() %></strong></h1>
+  <p>Members:</p>
+  <% @team.members.each do |member| %>
+<li><%= member.member %></li>
+
+<% end %>
+<br>
+<form action="/add_member" method="post">
+  <input id ='team_id' name='team_id' type='hidden' value='<%= @team.id() %>'>
+  <input type='text' name='member' id='member' placeholder='Name'>
+  <button type='submit' class='btn btn-primary'>Add Team Member</button>
+</form>
+
+  <br><a href="/teams">See All Teams</a>
+</ul>
