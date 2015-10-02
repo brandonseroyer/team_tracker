@@ -7,12 +7,20 @@ describe('#all') do
   end
 end
 
-describe('.clear') do
+describe('#clear') do
   it('clears the team array of entries') do
     test_team = Team.new({:name => 'Breaking Bad', :member => 'Walter White'})
     test_team.save()
     Team.clear()
     expect(Team.all()).to(eq([]))
+  end
+end
+
+describe('#team') do
+  it('finds a team based on its id') do
+    test_team = Team.new({:name => 'Breaking Bad', :member => 'Walter White'})
+    test_team.save()
+    expect(Team.find(1)).to(eq(test_team))
   end
 end
 
